@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>会议留声 · 本地会议记录</title>
+    <link rel="stylesheet" href="/style.css?v=1.1" />
+  </head>
+  <body>
+    <aside>
+      <a class="brand" href="/"
+        >◉ <span>会议留声<small>本地会议记录</small></span></a
+      ><button id="new" class="primary">＋ 新建会议</button>
+      <div class="list-heading">会议记录 <span id="count">0</span></div>
+      <nav id="list" aria-label="历史会议"></nav>
+      <div class="local-note">
+        <i></i> 本机存储 · 免费离线转写<small>录音与文字均保存在这台 Mac</small>
+      </div>
+    </aside>
+    <main>
+      <header>
+        <span>我的会议 / <b id="breadcrumb">新会议</b></span
+        ><span class="connection" id="health">正在连接本机服务…</span>
+      </header>
+      <section class="workspace">
+        <div class="title-row">
+          <div>
+            <p class="eyebrow">MEETING NOTES</p>
+            <input
+              id="title"
+              aria-label="会议名称"
+              placeholder="给这场会议起个名字"
+              maxlength="120"
+            />
+            <div id="meta">中文转写 · 停止录音后生成文字</div>
+          </div>
+          <a id="export" class="button disabled" aria-disabled="true"
+            >↓ 导出文本</a
+          >
+        </div>
+        <section class="recorder" aria-label="录音控制">
+          <div class="recorder-top">
+            <div class="source-control">
+              <label for="source">录音来源</label
+              ><select id="source">
+                <option value="system-mic">电脑声音＋麦克风</option>
+                <option value="microphone">仅麦克风</option>
+              </select>
+            </div>
+            <span id="status"><i></i> 准备就绪</span
+            ><span id="save">尚未开始录音</span>
+          </div>
+          <div class="record-controls">
+            <div class="time" id="timer">00:00:00</div>
+            <div class="meter" id="meter" aria-label="麦克风音量">
+              <span></span><span></span><span></span><span></span><span></span
+              ><span></span><span></span><span></span><span></span><span></span
+              ><span></span><span></span>
+            </div>
+            <div class="actions">
+              <button id="pause" hidden>暂停</button
+              ><button id="record" class="primary">
+                <span>●</span> 开始录音</button
+              ><button id="finish" class="primary" hidden>结束并转写</button>
+            </div>
+          </div>
+          <div class="source-levels" id="source-levels" hidden>
+            <label
+              >我的麦克风
+              <meter id="mic-level" min="0" max="1" value="0"></meter></label
+            ><label
+              >电脑声音
+              <meter id="system-level" min="0" max="1" value="0"></meter
+            ></label>
+          </div>
+          <p id="hint">
+            同时录制电脑播放的声音与麦克风，戴耳机也能记录双方。首次使用需允许
+            macOS 录音权限。
+          </p>
+        </section>
+        <div id="notice" role="status" hidden></div>
+        <div class="transcript-head">
+          <h2>会议文字稿</h2>
+          <span id="textsave">可编辑 · 自动保存</span>
+        </div>
+        <div class="paper">
+          <div id="empty">
+            <div class="empty-mark">〰</div>
+            <h3>把注意力留给会议</h3>
+            <p>
+              录音会自动保存到本机。<br />结束后在本机识别中文，文字稿会显示在这里。
+            </p>
+          </div>
+          <textarea
+            id="text"
+            aria-label="会议文字稿"
+            spellcheck="false"
+            hidden
+          ></textarea>
+        </div>
+        <audio id="audio" controls hidden></audio>
+        <footer>
+          <span>简体中文 · Whisper small</span
+          ><button id="retry" class="link" hidden>重新转写录音</button
+          ><span id="storage" title="本地保存目录">全部内容仅保存在本机</span>
+        </footer>
+      </section>
+    </main>
+    <script src="/app.js?v=1.1"></script>
+  </body>
+</html>

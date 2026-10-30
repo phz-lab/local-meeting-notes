@@ -1,0 +1,19 @@
+# Personal recordings, transcripts, caches, test assets and generated helpers
+outputs/
+work/
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+*.log
+*.caf
+*.wav
+*.webm
+*.aiff
+*.mp3
+*.m4a
+*.mp4
+*.pt
+*.bin

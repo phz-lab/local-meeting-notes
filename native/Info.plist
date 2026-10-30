@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+<key>CFBundleIdentifier</key><string>local.meetingnotes.AudioCapture</string>
+<key>CFBundleName</key><string>会议留声录音</string>
+<key>CFBundleExecutable</key><string>MeetingAudioCapture</string>
+<key>CFBundleVersion</key><string>1</string>
+<key>CFBundlePackageType</key><string>APPL</string>
+<key>LSUIElement</key><true/>
+<key>NSMicrophoneUsageDescription</key><string>录制你在会议中说的话，仅保存到本机。</string>
+<key>NSScreenCaptureUsageDescription</key><string>采集线上会议的电脑系统声音，仅保存音频，不保存画面。</string>
+</dict></plist>
